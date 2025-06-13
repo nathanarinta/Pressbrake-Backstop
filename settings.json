@@ -1,5 +1,5 @@
 {
-    "lead": ".2",
+    "lead": ".393701",
     "steps_per_rev": "200",
-    "micro_steps": "16"
+    "micro_steps": "1"
 }

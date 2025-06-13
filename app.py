@@ -1,9 +1,27 @@
 import tkinter as tk
+
+# app.py (very top)
+
+import sys, os
+# make sure the folder containing app.py (and hardware.py) is on sys.path
+sys.path.insert(0, os.path.dirname(__file__))
+import hardware
+print("sys.path[0] =", sys.path[0])
+print("can I import hardware?", "yes" if "hardware" in sys.modules else "no")
+
+# now you can safely import hardware (optional, but seeds sys.modules)
+
+
+import tkinter as tk
+from screens.Main_Screen import build_main_screen
+# ? rest of your imports and code ?
+
 from screens.Loading_Screen import build_loading_screen
 from screens.Main_Screen import build_main_screen
 from screens.Bend_Sequence_Setup import build_bend_sequence_setup
 from screens.Sequence_Run import build_sequence_run
 from screens.Settings import build_settings_screen
+
 
 class App(tk.Tk):
     def __init__(self):
