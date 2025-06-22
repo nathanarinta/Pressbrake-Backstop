@@ -15,9 +15,15 @@ def build_bend_sequence_setup(parent, show_frame_callback):
         return str(ASSETS_PATH / filename)
 
     # Canvas background
-    canvas = Canvas(frame, bg="#FFFFFF", height=720, width=1280,
-                    bd=0, highlightthickness=0, relief="ridge")
-    canvas.place(x=0, y=0)
+    canvas = tk.Canvas(
+        frame,
+        bg="#FFFFFF",
+        bd=0,
+        highlightthickness=0,
+        relief="ridge"
+    )
+    canvas.place(x=0, y=0, relwidth=1, relheight=1)
+
 
     try:
         bg_img = PhotoImage(file=relative_to_assets("image_1.png"))
@@ -31,20 +37,20 @@ def build_bend_sequence_setup(parent, show_frame_callback):
                        text="Bend Sequence Setup",
                        fill="#000000",
                        font=("IBMPlexMono Regular", -64))
-    canvas.create_text(680.0, 181.0, anchor="nw",
+    canvas.create_text(680.0, 121.0, anchor="nw",
                        text="Bend Sequence",
                        fill="#000000",
                        font=("IBMPlexMono Regular", -48))
 
     # Panels & headers
-    canvas.create_rectangle(518.0, 261.0, 868.0, 661.0,
+    canvas.create_rectangle(518.0, 201.0, 868.0, 661.0,
                             fill="#FFFFFF", outline="")
-    canvas.create_rectangle(868.0, 261.0, 1218.0, 661.0,
+    canvas.create_rectangle(868.0, 201.0, 1218.0, 661.0,
                             fill="#FFFFFF", outline="")
-    canvas.create_text(663.0, 261.0, anchor="nw",
+    canvas.create_text(663.0, 201.0, anchor="nw",
                        text="Step", fill="#000000",
                        font=("IBMPlexMono Regular", -25))
-    canvas.create_text(957.0, 261.0, anchor="nw",
+    canvas.create_text(957.0, 201.0, anchor="nw",
                        text="Distance (in)", fill="#000000",
                        font=("IBMPlexMono Regular", -25))
 
@@ -54,7 +60,7 @@ def build_bend_sequence_setup(parent, show_frame_callback):
                         borderwidth=0, highlightthickness=0,
                         relief="flat",
                         command=lambda: show_frame_callback("main"))
-    frame.btn1.place(x=17.0, y=645.0, width=200.0, height=60.0)
+    frame.btn1.place(x=17.0, y=585.0, width=200.0, height=60.0)
     frame.btn1_img = btn1_img
     btn1_img_h = PhotoImage(file=relative_to_assets("button_hover_1.png"))
     frame.btn1_img_h = btn1_img_h
@@ -65,7 +71,7 @@ def build_bend_sequence_setup(parent, show_frame_callback):
     btn2_img = PhotoImage(file=relative_to_assets("button_2.png"))
     frame.btn2 = Button(frame, image=btn2_img, borderwidth=0,
                         highlightthickness=0, relief="flat")
-    frame.btn2.place(x=35.0, y=486.0, width=300.0, height=60.0)
+    frame.btn2.place(x=35.0, y=426.0, width=300.0, height=60.0)
     frame.btn2_img = btn2_img
     btn2_img_h = PhotoImage(file=relative_to_assets("button_hover_2.png"))
     frame.btn2_img_h = btn2_img_h
@@ -98,7 +104,7 @@ def build_bend_sequence_setup(parent, show_frame_callback):
     btn3_img = PhotoImage(file=relative_to_assets("button_3.png"))
     frame.btn3 = Button(frame, image=btn3_img, borderwidth=0,
                         highlightthickness=0, relief="flat")
-    frame.btn3.place(x=35.0, y=393.0, width=300.0, height=60.0)
+    frame.btn3.place(x=35.0, y=333.0, width=300.0, height=60.0)
     frame.btn3_img = btn3_img
     btn3_img_h = PhotoImage(file=relative_to_assets("button_hover_3.png"))
     frame.btn3_img_h = btn3_img_h
@@ -122,7 +128,7 @@ def build_bend_sequence_setup(parent, show_frame_callback):
     btn4_img = PhotoImage(file=relative_to_assets("button_4.png"))
     frame.btn4 = Button(frame, image=btn4_img, borderwidth=0,
                         highlightthickness=0, relief="flat")
-    frame.btn4.place(x=35.0, y=300.0, width=300.0, height=60.0)
+    frame.btn4.place(x=35.0, y=240.0, width=300.0, height=60.0)
     frame.btn4_img = btn4_img
     btn4_img_h = PhotoImage(file=relative_to_assets("button_hover_4.png"))
     frame.btn4_img_h = btn4_img_h
@@ -146,7 +152,7 @@ def build_bend_sequence_setup(parent, show_frame_callback):
     btn5_img = PhotoImage(file=relative_to_assets("button_5.png"))
     frame.btn5 = Button(frame, image=btn5_img, borderwidth=0,
                         highlightthickness=0, relief="flat")
-    frame.btn5.place(x=35.0, y=207.0, width=300.0, height=60.0)
+    frame.btn5.place(x=35.0, y=147.0, width=300.0, height=60.0)
     frame.btn5_img = btn5_img
     btn5_img_h = PhotoImage(file=relative_to_assets("button_hover_5.png"))
     frame.btn5_img_h = btn5_img_h
@@ -163,30 +169,30 @@ def build_bend_sequence_setup(parent, show_frame_callback):
     frame.btn5.config(command=add_bend)
 
     # Distance input label & entry
-    canvas.create_text(35.0, 570.0, anchor="nw",
+    canvas.create_text(35.0, 510.0, anchor="nw",
                        text="Bend Dis.", fill="#000000",
                        font=("IBMPlexMono Regular", -40))
     ent1_bg = PhotoImage(file=relative_to_assets("entry_1.png"))
-    canvas.create_image(368.0, 596.0, image=ent1_bg)
+    canvas.create_image(368.0, 536.0, image=ent1_bg)
     frame.entry_1 = Entry(frame, bd=0, bg="#FFFFFF",
                           fg="#000716", highlightthickness=0)
-    frame.entry_1.place(x=268.0, y=566.0, width=200.0, height=58.0)
+    frame.entry_1.place(x=268.0, y=506.0, width=200.0, height=58.0)
     frame.entry_1_image = ent1_bg
 
     # Steps box
     ent2_bg = PhotoImage(file=relative_to_assets("entry_2.png"))
-    canvas.create_image(693.0, 480.0, image=ent2_bg)
+    canvas.create_image(693.0, 420.0, image=ent2_bg)
     frame.entry_2 = Text(frame, bd=0, bg="#D9D9D9",
                          fg="#000716", highlightthickness=0)
-    frame.entry_2.place(x=528.0, y=305.0, width=330.0, height=348.0)
+    frame.entry_2.place(x=528.0, y=245.0, width=330.0, height=348.0)
     frame.entry_2_image = ent2_bg
 
     # Distances box
     ent3_bg = PhotoImage(file=relative_to_assets("entry_3.png"))
-    canvas.create_image(1043.0, 480.0, image=ent3_bg)
+    canvas.create_image(1043.0, 420.0, image=ent3_bg)
     frame.entry_3 = Text(frame, bd=0, bg="#D9D9D9",
                          fg="#000716", highlightthickness=0)
-    frame.entry_3.place(x=878.0, y=305.0, width=330.0, height=348.0)
+    frame.entry_3.place(x=878.0, y=245.0, width=330.0, height=348.0)
     frame.entry_3_image = ent3_bg
 
     return frame

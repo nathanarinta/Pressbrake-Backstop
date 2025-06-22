@@ -29,10 +29,15 @@ def build_sequence_run(root, switch_to):
 
     # Canvas background
     canvas = tk.Canvas(
-        frame, bg="#FFFFFF", height=720, width=1280,
-        bd=0, highlightthickness=0, relief="ridge"
+        frame,
+        bg="#FFFFFF",
+        bd=0,
+        highlightthickness=0,
+        relief="ridge"
     )
-    canvas.place(x=0, y=0)
+    canvas.place(x=0, y=0, relwidth=1, relheight=1)
+    canvas.place(x=0, y=0, relwidth=1, relheight=1)
+
 
     # Background image
     try:

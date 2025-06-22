@@ -18,7 +18,7 @@ except ImportError:
 # Now instantiate once
 try:
     STEP_PIN = DigitalOutputDevice(8)
-    DIR_PIN  = DigitalOutputDevice(10)
+    DIR_PIN  = DigitalOutputDevice(9)
     ON_PI    = True
     print(f"gpiozero initialized via {BACKEND}: STEP=8, DIR=10")
 except Exception as e:
