@@ -16,13 +16,13 @@ def build_settings_screen(root, switch_to):
     canvas = tk.Canvas(
         frame,
         bg="#FFFFFF",
-        height=720,
-        width=1280,
         bd=0,
         highlightthickness=0,
         relief="ridge"
     )
-    canvas.place(x=0, y=0)
+    canvas.place(x=0, y=0, relwidth=1, relheight=1)
+    canvas.place(x=0, y=0, relwidth=1, relheight=1)
+
 
     try:
         # Background
